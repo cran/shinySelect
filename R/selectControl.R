@@ -84,7 +84,7 @@ isMarkedHTML <- function(x){
 #'
 #' @examples library(shinySelect)
 #' choices <- HTMLchoices(
-#'   values = list("alpha", "beta", "gammma"),
+#'   values = list("alpha", "beta", "gamma"),
 #'   labels = list(katex("\\alpha"), katex("\\beta"), katex("\\gamma"))
 #' )
 katex <- function(x){
@@ -430,7 +430,7 @@ process_choices_selected <- function(choices, selected){
 #' library(bslib)
 #'
 #' choices <- HTMLchoices(
-#'   values = list("alpha", "beta", "gammma"),
+#'   values = list("alpha", "beta", "gamma"),
 #'   labels = list(katex("\\alpha"), katex("\\beta"), katex("\\gamma"))
 #' )
 #'
@@ -442,8 +442,7 @@ process_choices_selected <- function(choices, selected){
 #'     label = tags$h1("Make a choice", style="color: red;"),
 #'     choices = choices,
 #'     selected = "alpha",
-#'     multiple = FALSE,
-#'     animated = TRUE
+#'     multiple = FALSE
 #'   ),
 #'   br(),
 #'   verbatimTextOutput("textOutput")
@@ -866,46 +865,23 @@ selectControlInput <- function(
 #'
 #' @param session the Shiny \code{session} object
 #' @param inputId the id of the select control widget to be updated
-#' @param label new value for the label; \code{NULL} removes the label, set
-#'   \code{label = NA} if you don't want to change the label
-#' @param choices this argument can be used to change the choices, but it is
-#'   also required if one does not want to change it but one wants to change
-#'   the selected values
-#' @param selected new value(s) for the selected items
+#' @param choices new choices, or \code{NULL}
+#' @param selected new value(s) for the selected items, or \code{NULL}
 #'
 #' @return No returned value, called for side effect.
 #'
 #' @export
 updateSelectControlInput <- function(
-  session, inputId, label = NA, choices = NULL, selected = NULL
+  session, inputId, choices = NULL, selected = NULL
 ){
-  value <- NA
-  if(!identical(label, NA)){
-    label <- process_label(label)
-  }
-  if(!is.null(choices)){
-    LIST <- process_choices_selected(choices, selected)
-    value <- selected
-  }else{
-    LIST <- NULL
-  }
-  if(!is.null(selected) && is.null(choices)){
-    warning(
-      "You have to provide `choices` if you want to update `selected`."
+  if(is.null(choices)) {
+    session$sendCustomMessage(
+      paste0("updateValue_", inputId),
+      as.list(selected)
     )
+  } else {
+    config <- process_choices_selected(choices, selected)
+    #config <- c(config, list(isMulti = TRUE))
+    session$sendInputMessage(inputId, message)
   }
-  if(identical(label, NA)){
-    config <- LIST
-  }else{
-    config <- c(list(label = label), LIST)
-  }
-  if(identical(value, NA)){
-    message <- list(config = config)
-  }else{
-    if(length(value) > 1L){
-      config <- c(config, list(isMulti = TRUE))
-    }
-    message <- list(config = config, value = value)
-  }
-  session$sendInputMessage(inputId, message)
 }
