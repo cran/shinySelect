@@ -1,6 +1,6 @@
 Package: shinySelect
 Title: A Wrapper of the 'react-select' Library
-Version: 1.1.0
+Version: 1.2.0
 Authors@R: c(
     person("Stéphane", "Laurent", , "laurent_step@outlook.fr", role = c("aut", "cre")),
     person("Jed", "Watson", role = "cph",
@@ -19,10 +19,10 @@ Suggests: bslib, jsTreeR, shiny
 Encoding: UTF-8
 RoxygenNote: 7.2.1
 NeedsCompilation: no
-Packaged: 2022-09-01 11:53:50 UTC; stla
+Packaged: 2022-10-21 12:16:35 UTC; stla
 Author: Stéphane Laurent [aut, cre],
   Jed Watson [cph] (author of the 'react-select' library),
   Clauderic Demers [cph] (author of the 'react-sortable-hoc' library)
 Maintainer: Stéphane Laurent <laurent_step@outlook.fr>
 Repository: CRAN
-Date/Publication: 2022-09-01 12:10:02 UTC
+Date/Publication: 2022-10-21 12:40:05 UTC
