@@ -1,7 +1,7 @@
-fb81954018de326c5544347fc37d6ef8 *DESCRIPTION
+206013e165363c0381bf42ae9c9ee904 *DESCRIPTION
 f330976a33866199c1bb474250ba6cf2 *NAMESPACE
-53bea8ab2c447a3443ad67e11d3f2802 *NEWS.md
-df91ef8b88220e17d81a6accd18d16fb *R/selectControl.R
+381c6df26babe1f646284407b2a5974d *NEWS.md
+1bfc3c2655b72813e75360bb33343dee *R/selectControl.R
 46bbe119c962c41a3f50b4b1493ffeb7 *README.md
 56573229753fad48910bda2ea1a6dd54 *inst/www/KaTeX/fonts/KaTeX_AMS-Regular.ttf
 10824af77e9961cfd548c8a458f10851 *inst/www/KaTeX/fonts/KaTeX_AMS-Regular.woff
@@ -66,9 +66,9 @@ b8b8393d2e65fcebda5fa99fa3264f41 *inst/www/KaTeX/fonts/KaTeX_Typewriter-Regular.
 fd1ecc245b934f1ffb5d7f3ff87d4df8 *inst/www/KaTeX/katex.min.css
 bfca83b6fc4c575b0498dd592bc6f83f *inst/www/KaTeX/katex.min.js
 e4d645a6beb67828eaf50ceedcf1672d *inst/www/shinySelect/selectControl/selectControl.css
-e9d570f351a8f4852dddc8e6fa7d8205 *inst/www/shinySelect/selectControl/selectControl.js
+3cb25026438504baafdb9bd02907da84 *inst/www/shinySelect/selectControl/selectControl.js
 6fce53c7c7713ebf61712cc2929746fa *inst/www/shinySelect/selectControl/selectControl.js.LICENSE.txt
-2e8329b7c8f8efc7e2f6874ca3233bf5 *inst/www/shinySelect/selectControl/selectControl.js.map
+4c9cd47cceba3bb6f96ac8416edeacc9 *inst/www/shinySelect/selectControl/selectControl.js.map
 c92662e26fda8f62ecb5b3b60f08546e *man/HTMLchoices.Rd
 96b2192f83ad21562198054bb4052e10 *man/HTMLgroupedChoices.Rd
 1d5861d5278c49fb1f421f018bbf8212 *man/katex.Rd
